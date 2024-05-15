@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UFO Skins</title>
+  <link rel="stylesheet" href="UFOSkins.css" />
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+  </style>
+  <style>
+    * {
+      color: aliceblue;
+    }
+
+    .main_head {
+      text-align: center;
+    }
+
+    .scroll {
+      background: repeating-linear-gradient(
+    45deg,
+    #4a1497,
+    #4a1497 10px,
+    #4e177d 10px,
+    #4e177d 20px
+  );
+      display: flex;
+      width: 95vw;
+      margin-left: 2.5vw;
+      border-radius: 20px;
+      overflow-x: scroll;
+      position: absolute;
+      bottom: 20px;
+    }
+
+    .dropdown {
+      margin-top: 0;
+    }
+
+    /* Firefox (uncomment to work in Firefox, although other properties will not work!)  */
+/** {
+  scrollbar-width: thin;
+  scrollbar-color: #075AC9 #DFE9EB;
+}*/
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #DFE9EB;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: #B8C0C2;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: #B8C0C2;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #075AC9;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #2279E1;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #50A2F9;
+}
+
+/* CSS */
+.button-26 {
+  appearance: button;
+  background-color: #1652F0;
+  border: 1px solid #1652F0;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Graphik,-apple-system,system-ui,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-size: 14px;
+  line-height: 1.15;
+  overflow: visible;
+  padding: 12px 16px;
+  position: absolute;
+  top: 7px;
+  left: 12px;
+  text-align: center;
+  text-transform: none;
+  transition: all 80ms ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+}
+
+.button-26:disabled {
+  opacity: .5;
+}
+
+.button-26:focus {
+  outline: 0;
+}
+
+.button-26:hover {
+  background-color: #0A46E4;
+  border-color: #0A46E4;
+}
+
+.button-26:active {
+  background-color: #0039D7;
+  border-color: #0039D7;
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="gmpg">
+    <!-- HTML !-->
+    <a href="./game.html">
+      <button class="button-26" role="button">Menu</button>
+    </a>
+  </div>
+  <h2 class="main_head">UFO Skins</h2>
+  <div class="dropdown">
+    <br />
+    <div class="img">
+      <img id="selectedImage" class="showImg" src="./assets/img/space.png" alt="Selected Image" />
+    </div>
+    <div class="scroll">
+      <div class="imgcard">
+        <img class="clickable-image" src="./assets/img/space.png" alt="UFO" data-value="./assets/img/space.png" />
+        <p>Space Sparkle</p>
+      </div>
+      <div class="imgcard">
+        <img class="clickable-image" src="./assets/img/new folder/1.png" alt="UFO"
+          data-value="./assets/img/new folder/1.png" />
+        <p>Dead Pirates</p>
+        <div id="scs1">
+          <div class="scoreScreen">
+            <img src="./image-removebg-preview (1).png" alt="Design">
+            <p>3000</p>
+          </div>
+        </div>
+      </div>
+      <div class="imgcard">
+        <img class="clickable-image" src="./assets/img/new folder/2.png" alt="UFO"
+          data-value="./assets/img/new folder/2.png" />
+        <p>Space Patrol</p>
+        <div id="scs2">
+          <div class="scoreScreen1">
+            <img src="./image-removebg-preview (1).png" alt="Design">
+            <p>4000</p>
+          </div>
+        </div>
+      </div>
+      <div class="imgcard">
+        <img class="clickable-image ufo3" src="./assets/img/new folder/6.png" alt="UFO"
+          data-value="./assets/img/new folder/6.png" />
+        <p>Robo Recon</p>
+        <div id="scs3">
+          <div class="scoreScreen2">
+            <img src="./image-removebg-preview (1).png" alt="Design">
+            <p>5500</p>
+          </div>
+        </div>
+      </div>
+      <div class="imgcard">
+        <img class="clickable-image ufo4" src="./assets/img/new folder/4.png" alt="UFO"
+          data-value="./assets/img/new folder/4.png" />
+        <p>Crystal Comet</p>
+        <div id="scs4">
+          <div class="scoreScreen3">
+            <img src="./image-removebg-preview (1).png" alt="Design">
+            <p>8000</p>
+          </div>
+        </div>
+      </div>
+      <div class="imgcard">
+        <img class="clickable-image" src="./assets/img/new folder/n5.png" alt="UFO"
+          data-value="./assets/img/new folder/n5.png" />
+        <p>Dark Shadow</p>
+        <div id="scs5">
+          <div class="scoreScreen4">
+            <img src="./image-removebg-preview (1).png" alt="Design">
+            <p>12000</p>
+          </div>
+        </div>
+      </div>
+      <div class="imgcard">
+        <img class="clickable-image" src="./assets/img/new folder/5.png" alt="UFO"
+          data-value="./assets/img/new folder/5.png" />
+        <p>Folk's Flyer</p>
+        <div id="scs6">
+          <div class="scoreScreen5">
+            <img src="./image-removebg-preview (1).png" alt="Design">
+            <p>25000</p>
+          </div>
+        </div>
+      </div>
+      <div class="imgcard">
+        <img class="clickable-image" src="./assets/img/new folder/n1.png" alt="UFO"
+          data-value="./assets/img/new folder/n1.png" />
+        <p>Frosty Ice</p>
+        <div id="scs7">
+          <div class="scoreScreen6">
+            <img src="./image-removebg-preview (1).png" alt="Design">
+            <p>30000</p>
+          </div>
+        </div>
+      </div>
+      <div class="imgcard">
+        <img class="clickable-image" src="./assets/img/new folder/n2.png" alt="UFO"
+          data-value="./assets/img/new folder/n2.png" />
+        <p>Plant Pod</p>
+        <div id="scs8">
+          <div class="scoreScreen7">
+            <img src="./image-removebg-preview (1).png" alt="Design">
+            <p>40000</p>
+          </div>
+        </div>
+      </div>
+      <div class="imgcard">
+        <img class="clickable-image" src="./assets/img/new folder/n3.png" alt="UFO"
+          data-value="./assets/img/new folder/n3.png" />
+        <p>Ruby Radar</p>
+        <div id="scs9">
+          <div class="scoreScreen8">
+            <img src="./image-removebg-preview (1).png" alt="Design">
+            <p>50000</p>
+          </div>
+        </div>
+      </div>
+      <div class="imgcard">
+        <img class="clickable-image" src="./assets/img/new folder/n4.png" alt="UFO"
+          data-value="./assets/img/new folder/n4.png" />
+        <p>Golden Majesty</p>
+        <div id="scs10">
+          <div class="scoreScreen9">
+            <img src="./image-removebg-preview (1).png" alt="Design">
+            <p>80000</p>
+          </div>
+        </div>
+      </div>
+      <div class="imgcard">
+        <img class="clickable-image" src="./assets/img/new folder/n6.png" alt="UFO"
+          data-value="./assets/img/new folder/n6.png" />
+        <p>Royal Radiance</p>
+        <div id="scs11">
+          <div class="scoreScreen10">
+            <img src="./image-removebg-preview (1).png" alt="Design">
+            <p>120000</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  </div>
+</body>
+<script>
+  var imgUFO = document.getElementById("selectedImage");
+  var selectedImage = localStorage.getItem("ImgSelect");
+  console.log(selectedImage);
+  if (selectedImage === null) {
+    DefImg = "./assets/img/space.png";
+    imgUFO.src = DefImg;
+  } else {
+    imgUFO.src = selectedImage;
+  }
+</script>
+<script src="./assets/js/select.js"></script>
+
+</html>

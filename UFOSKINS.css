@@ -1,0 +1,484 @@
+body {
+    background-color: black;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.button-30 {
+    margin-top: 25px;
+    align-items: center;
+    appearance: none;
+    background-color: #FCFCFD;
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #36395A;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono", monospace;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 18px;
+}
+
+.button-30:focus {
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.button-30:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+.button-30:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+.showImg {
+    width: 25rem;
+    /* margin-left: 10vw; */
+}
+
+.dropdown {
+    margin-top: 15vh;
+    width: 100vw;
+    height: 70vh;
+}
+
+.img {
+    height: 15vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7.5rem;
+}
+
+.seldrop {
+    /* margin-top: -2.5rem; */
+    height: 5vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    height: 7.5vh;
+    width: 100vw;
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dispImages {
+    height: 40vh;
+    width: 100vw;
+    background-color: aliceblue;
+    margin-top: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgcard {
+    height: 175px;
+    width: 125px;
+    background-color: black;
+    margin: 10px 10px;
+    border-radius: 10px;
+}
+
+.imgcard img {
+    margin-top: 20px;
+    width: 100px;
+    margin-left: 12.5px;
+}
+
+.imgcard p {
+    text-align: center;
+    font-size: small;
+}
+
+.ufo3 {
+    margin-bottom: 14.5px;
+}
+
+.ufo4 {
+    margin-bottom: 46px;
+}
+
+.div1 {
+    display: flex;
+}
+
+.div2 {
+    display: flex;
+}
+
+.bgwhite {
+    background-color: aliceblue;
+}
+
+@media (min-width: 170px) {
+    .showImg {
+        width: 15rem;
+    }
+
+    .div1 {
+        flex-direction: column;
+    }
+
+    .div2 {
+        flex-direction: column;
+    }
+
+    .secdiv {
+        margin-top: 160px;
+    }
+
+    .dispImages {
+        height: 80vh;
+    }
+}
+
+@media (min-width: 500px) {
+    .div1 {
+        flex-direction: row;
+    }
+
+    .div2 {
+        flex-direction: row;
+    }
+
+    .dispImages {
+        flex-direction: column;
+    }
+
+    .secdiv {
+        margin-top: 40px;
+    }
+}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 992px) {
+    .dispImages {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 1200px) {}
+
+@media (min-width: 1400px) {}
+
+.locked {
+    display: none;
+}
+
+.scoreScreen img {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    margin: 0;
+}
+
+.scoreScreen {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 118px;
+    left: 158px;
+    background-color: black;
+}
+
+.scoreScreen p {
+    background-color: black;
+    color: white;
+    border: 2px solid aliceblue;
+    left: 30px;
+    padding: 0 5px;
+    position: relative;
+    margin: 0;
+}
+
+.scoreScreen1 img {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    margin: 0;
+}
+
+.scoreScreen1 {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 118px;
+    left: 288px;
+    background-color: black;
+}
+
+.scoreScreen1 p {
+    background-color: black;
+    color: white;
+    border: 2px solid aliceblue;
+    left: 30px;
+    padding: 0 5px;
+    position: relative;
+    margin: 0;
+}
+
+.scoreScreen2 img {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    margin: 0;
+}
+
+.scoreScreen2 {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 118px;
+    left: 418px;
+    background-color: black;
+}
+
+.scoreScreen2 p {
+    background-color: black;
+    color: white;
+    border: 2px solid aliceblue;
+    left: 30px;
+    padding: 0 5px;
+    position: relative;
+    margin: 0;
+}
+
+.scoreScreen3 img {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    margin: 0;
+}
+
+.scoreScreen3 {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 118px;
+    left: 548px;
+    background-color: black;
+}
+
+.scoreScreen3 p {
+    background-color: black;
+    color: white;
+    border: 2px solid aliceblue;
+    left: 30px;
+    padding: 0 5px;
+    position: relative;
+    margin: 0;
+}
+
+.scoreScreen4 img {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    margin: 0;
+}
+
+.scoreScreen4 {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 118px;
+    left: 681px;
+    background-color: black;
+}
+
+.scoreScreen4 p {
+    background-color: black;
+    color: white;
+    border: 2px solid aliceblue;
+    left: 30px;
+    padding: 0 5px;
+    position: relative;
+    margin: 0;
+}
+
+.scoreScreen5 img {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    margin: 0;
+}
+
+.scoreScreen5 {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 118px;
+    left: 812px;
+    background-color: black;
+}
+
+.scoreScreen5 p {
+    background-color: black;
+    color: white;
+    border: 2px solid aliceblue;
+    left: 30px;
+    padding: 0 5px;
+    position: relative;
+    margin: 0;
+}
+
+.scoreScreen6 img {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    margin: 0;
+}
+
+.scoreScreen6 {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 118px;
+    left: 946px;
+    background-color: black;
+}
+
+.scoreScreen6 p {
+    background-color: black;
+    color: white;
+    border: 2px solid aliceblue;
+    left: 30px;
+    padding: 0 5px;
+    position: relative;
+    margin: 0;
+}
+
+.scoreScreen7 img {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    margin: 0;
+}
+
+.scoreScreen7 {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 118px;
+    left: 1076px;
+    background-color: black;
+}
+
+.scoreScreen7 p {
+    background-color: black;
+    color: white;
+    border: 2px solid aliceblue;
+    left: 30px;
+    padding: 0 5px;
+    position: relative;
+    margin: 0;
+}
+
+.scoreScreen8 img {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    margin: 0;
+}
+
+.scoreScreen8 {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 118px;
+    left: 1211px;
+    background-color: black;
+}
+
+.scoreScreen8 p {
+    background-color: black;
+    color: white;
+    border: 2px solid aliceblue;
+    left: 30px;
+    padding: 0 5px;
+    position: relative;
+    margin: 0;
+}
+
+.scoreScreen9 img {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    margin: 0;
+}
+
+.scoreScreen9 {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 118px;
+    left: 1342px;
+    background-color: black;
+}
+
+.scoreScreen9 p {
+    background-color: black;
+    color: white;
+    border: 2px solid aliceblue;
+    left: 30px;
+    padding: 0 5px;
+    position: relative;
+    margin: 0;
+}
+
+.scoreScreen10 img {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    margin: 0;
+}
+
+.scoreScreen10 {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 118px;
+    left: 1471px;
+    background-color: black;
+}
+
+.scoreScreen10 p {
+    background-color: black;
+    color: white;
+    border: 2px solid aliceblue;
+    left: 30px;
+    padding: 0 5px;
+    position: relative;
+    margin: 0;
+}

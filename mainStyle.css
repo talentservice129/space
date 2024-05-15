@@ -1,0 +1,233 @@
+body {
+    /* background-image: url('Untitled-1-09.png'); */
+    background-color: #020516 !important;
+    /* background-size: cover; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; */
+  }
+  
+  .button-30{
+    margin: 0.5rem;
+  }
+  
+  .menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2.5rem;
+  }
+  
+  #game{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    margin-top: 10rem;
+  }
+  
+  /* CSS */
+  .button-30 {
+    align-items: center;
+    appearance: none;
+    background-color: #9e9eff;
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#9900ff 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: ghostwhite;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono",monospace;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 18px;
+  }
+  
+  .button-30:focus {
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  }
+  
+  .button-30:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #9900ff 0 -3px 0 inset;
+    transform: translateY(-2px);
+  }
+  
+  .button-30:active {
+    box-shadow: #4e4e97 0 3px 7px inset;
+    transform: translateY(2px);
+  }
+  
+  body {
+    /*Removes the default margin preset by the browser*/
+    margin: 0;
+  
+    min-height: 100vh;
+  
+    /* Used to vertically center <main> when <main>'s margin is set to auto */
+    display: flex; 
+  
+    background-color: #b4c1cb;
+  
+    /* Image for texture and lightening effect on background */
+    background-image: 
+                linear-gradient(135deg, rgba(255,255,255,.5) 30%, rgba(0,0,0,.1)),
+                ;
+                
+  }
+  
+  main {
+    margin: auto;
+  }
+  
+  input[type="range"] {
+    /* To remove default styles appplied by webkit browsers */
+    -webkit-appearance: none; 
+  
+    width: 15rem;
+    background: transparent;
+    position: relative;
+  }   
+  
+  input[type="range"]:focus {
+    /* To remove default (mostly blue) outline appplied by browsers on :focus */
+    outline: 0;
+  }
+  
+  /* SLIDER THUMB -> represented by the orange ball in the design */
+  /* Webkit based browsers (chrome, opera, ...) */
+  input[type="range"]::-webkit-slider-thumb {
+     /* Removes the default styling */
+    -webkit-appearance: none;
+  
+    width: 1.75em;
+    height: 1.75em;
+    margin: -0.675em 0;
+    background: #9900ff;
+    border-radius: 100%;
+  
+    /* The inset shadow gives depth and makes the thumb look 3 dimensional and the other one shows a subtle effect of the shadow it creates because of the light source coming from the top left of the page */
+    box-shadow: 
+                inset .8em .8em 5px -8px rgba(255, 255, 255, .4),
+                inset -.4em -.4em 10px -3px rgba(0,0,0,.2),
+                0.7em 0.5em 7px -0.5em rgba(0,0,0,.4);;
+  
+    cursor: pointer;
+  }
+  
+  /*All the same stuff for firefox */
+  input[type=range]::-moz-range-thumb {
+    width: 1em;
+    height: 1em;
+    margin: .5em 0;
+    background: #9e9eff;
+    border-radius: 100%;
+    box-shadow: 
+                inset .8em .8em 5px -8px rgba(255, 255, 255, .4),
+                inset -.4em -.4em 10px -3px rgba(0,0,0,.2),
+                0.7em 0.5em 7px -0.5em rgba(0,0,0,.4);
+    cursor: pointer;
+    border: 0;
+  }
+  
+  
+  /* RUNNABLE TRACK -> represented by the indented carve in which the ball (thumb) moves */
+  /* Webkit browsers */
+  input[type="range"]::-webkit-slider-runnable-track {
+    background: transparent;
+    width: 100%;
+    height: 0.5em;
+    padding: 0 1em;
+    border-radius: 2em;
+  
+    /* These shadow are what create the skeumorphic indent on the track. The first one is dark to show places in the indent that light don't reach and the second one shows places where light meets thereby creating the illusion of depth */ 
+    box-shadow: 
+                inset .6em 1em 10px rgba(0,0,0,.15),
+                inset -.6em -1em 10px rgba(0, 0, 0, .15),
+                -0em -0em 2px #9900ff;
+  }
+  /* For firefox */
+  input[type=range]::-moz-range-track {
+    background: transparent;
+    width: 100%;
+    height: 2em;
+    padding: 0 1em;
+    border-radius: 2em;
+    box-shadow: 
+                inset .6em 1em 2px rgba(0,0,0,.15),
+                inset -.6em -1em 2px rgba(0, 0, 0, .15);
+  }
+  
+  /* For the numbering in the range's design - doesn't show on firefox but shows on chrome and opera */
+  input[type="range"]::before {
+    /* content: "0 1 2 3 4 5 6 7 8 9"; */
+    position: absolute;
+    text-align: center;
+    color: #c4c4c4;
+    font-size: 1em;
+  
+    /*Serves to spread the letters to fit the whole width of the track */
+    letter-spacing: .65em;
+  
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    padding: 1.6em;
+  
+    /* Makes the letters look embossed adding to the skeumorphic theme of the design */
+    text-shadow: .5px .5px 0.9px rgba(0,0,0, .4);
+  
+    z-index: -1;
+  }
+  
+  .imageLogo{
+    z-index: -1;
+    width: 200px;
+    height: 200px;
+    /* margin-bottom: 20vh; */
+  }
+  
+  .imageLogo1{
+    z-index: -1;
+    width: 200px;
+    height: 200px;
+    /* margin-bottom: 20vh; */
+  }
+  
+  .imageLogo3{
+    z-index: -1;
+    width: 22rem;
+    height: 22rem;
+    /* margin-bottom: 20vh; */
+  }
+  
+  .alink{
+    text-decoration: none;
+    color: aliceblue;
+    width: 200px;
+    text-align: center;
+    font-size: 1.2rem;
+    /* width: 60vw; */
+    font-family: 'Lato', sans-serif;
+  }
+
+  .img8{
+    display: flex;
+    flex-direction: column;
+    margin-top: -18.5rem;
+    /* position: absolute; */
+}

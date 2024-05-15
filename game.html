@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Stellar Drift - Mini space game" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Audiowide|Oxanium:wght@300;500;700|Orbitron&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" type="text/css" />
+    <title>Stellar Drift</title>
+  </head>
+  <body>
+    <article id="container">
+      <!-- Floating Banners Above Canvas -->
+      <section class="top-banner" style="display: none">
+        <!-- Name Title Above Game -->
+        <div class="name-title">
+          <div id="countdown">
+            <p id="countdowntimer"></p>
+          </div>
+          <div id="milkyway-container">
+            <!-- <h1>Asteroid Belt</h1> -->
+            <!-- Add your text layers here -->
+          </div>
+        </div>
+        <!-- Audio -->
+        <audio
+          id="music"
+          src="assets/audio/Event Horizon - Background music.mp3"
+          loop
+        ></audio>
+        <audio id="start" src="assets/audio/Start game.mp3"></audio>
+        <audio id="explosion" src="assets/audio/Explosion.mp3"></audio>
+        <audio id="completed" src="assets/audio/Game complete.mp3"></audio>
+        <!-- Mute Button -->
+        <ul class="mute-btn">
+          <li>
+            <button style="display: none" id="mute" aria-label="Mute Audio">
+              <i id="i-muted" class="hidden fa fa-volume-off"></i>
+              <i id="i-not-muted" class="fa fa-volume-up"></i>
+            </button>
+          </li>
+        </ul>
+        <!-- Reset Button -->
+        <ul class="reset-btn">
+          <li>
+            <button id="reset" style="display: none">Reset</button>
+          </li>
+        </ul>
+      </section>
+      <!-- Start Game Panel -->
+      <section class="mn-gm" id="start-panel">
+        <!-- Instructions -->
+        <!-- <audio id="brickBreakSound" autoplay loop="loop" style="margin-top: 2rem">
+          <source src="SPACE.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio> -->
+        <div class="secth">
+          <p>
+            <img
+              class="imglogo"
+              src="./image-removebg-preview.png"
+              alt="Game Image"
+              width="300"
+            />
+          </p>
+          <div class="mainsection">
+            <div class="ufoImage">
+              <img id="imgUFO" src="./assets/img/space.png" alt="Image" />
+            </div>
+            <div class="set-section">
+              <div class="dropdown">
+                <label class="audiosymbol" for="audioDropdown"
+                  ><img src="./image-removebg-preview2.png" alt="Music"
+                /></label>
+                <select class="drpdwn" id="audioDropdown">
+                  <option value="asset/">Mute</option>
+                  <option value="assets/audio/1.mp3">Lunar Lullaby</option>
+                  <option value="assets/audio/2.mp3">Gravity Groove</option>
+                  <option value="assets/audio/3.mp3">Space Storm</option>
+                  <option value="assets/audio/4.mp3">Space Party</option>
+                  <option value="assets/audio/5.mp3">Beyond Horizon</option>
+                  <option value="assets/audio/6.mp3">Lunar Melody</option>
+                </select>
+                
+                <img src="assets/audio/1.mp3" alt="" />
+              </div>
+              <div class="scr">
+                <!-- <p>HIGH SCORE:</p> -->
+                <img
+                  src="./image-removebg-preview (1).png"
+                  alt="world"
+                  height="30px"
+                />
+                <div class="score">
+                  <p class="high-sc" id="high-score-output">0</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="playBtn">
+            <!-- <h2 class="button-27">Play</h2> -->
+            <button id="start-btn1" type="button" role="button">Tap to Play</button>
+          </div>
+          <div class="selimage">
+            <a href="Ufo_Skin.html">
+              <div>
+                <img
+                  src="./assets/img/image-removebg-preview.png"
+                  alt="UFO Skins"
+                  class="ufoimage"
+                />
+              </div>
+            </a>
+            <!-- <a href="Map_skins.html">
+              <div>
+                <img
+                  src="./assets/img/selectworld.png"
+                  alt="World"
+                  class="Worldimage"
+                />
+              </div>
+            </a> -->
+            <button id="start-btn" onclick="stopSound">
+              <img
+                src="./_b8518be4-ea3e-4271-b50b-35a65d5b68e1-removebg-preview.png"
+                alt="Start"
+              />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Crash Panel -->
+      <section id="crash-panel">
+        <!-- Display Message -->
+        <p>CRASHED<br /></p>
+        <!-- Score Output Display -->
+        <p>YOUR SCORE:</p>
+        <p id="score-output">0</p>
+        <!-- Restart Button -->
+        <button id="restart-btn">Restart Game</button>
+      </section>
+
+      <!-- Completed Panel -->
+      <section id="completed-panel">
+        <p>
+          <!-- <img src="won.gif" alt="Congratulations" width="300" height="300" /> -->
+        </p>
+        <!-- Restart Button -->
+        <button id="restart-btn">Restart Game</button>
+      </section>
+
+      <!-- Countdown Timer Overlay -->
+      <div id="countdown">
+        <p id="countdowntimer"></p>
+      </div>
+
+      <!-- Github Button Icon -->
+      <div id="github">
+        <ul class="github-button">
+          <!-- Icon with link to project repo page -->
+        </ul>
+      </div>
+
+      <!-- Direction Buttons -->
+      <section id="bottom-banner">
+        <ul class="dir-btn-container">
+          <!-- Left Side Screen Button -->
+          <li class="dir-btns-sides">
+            <img id="shipImage" src="./assets/img/space.png" hidden />
+            <button
+              class="side-screen-btn"
+              id="left-direction-btn"
+              aria-label="Left Direction"
+            ></button>
+            <div class="leftImgBtn">
+              <img src="./arrow-right.png" alt="Left Arrow">
+            </div>
+          </li>
+          <!-- Right Side Screen Button -->
+          <li class="dir-btns-sides">
+            <button
+              class="side-screen-btn"
+              id="right-direction-btn"
+              aria-label="Right Direction"
+            ></button>
+            <div class="rightImgBtn">
+              <img src="./arrow-right.png" alt="Right Arrow">
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <div
+        id="milkyway-container-bottom"
+        style="position: absolute; height: 17vh; width: 100vw; bottom: 0"
+        class="hidden"
+      >
+        <div>
+          <!-- <h1>Space</h1> -->
+
+          <!-- Add your text layers here -->
+        </div>
+      </div>
+
+      <!-- Canvas -->
+      <canvas id="canvas"> Error </canvas>
+    </article>
+    <!-- JavaScript Scripts Link -->
+    <script>
+      function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+      }
+
+      function isValidPermutation(array) {
+        for (let i = 0; i < array.length - 3; i++) {
+          if (
+            array[i] === 0 &&
+            array[i + 1] === 1 &&
+            array[i + 2] === 2 &&
+            array[i + 3] === 3
+          ) {
+            return false; // Found four elements in their original positions
+          }
+        }
+        return true; // No four elements are in their original positions
+      }
+
+      function getRandomPermutation(array) {
+        let permutation = array.slice(); // Make a copy of the original array
+        do {
+          shuffleArray(permutation);
+        } while (!isValidPermutation(permutation));
+        return permutation;
+      }
+
+      const colors = [0, 1, 2, 3, 4];
+
+      const randomPermutation = getRandomPermutation(colors);
+
+      // Save the permutation to local storage
+      localStorage.setItem(
+        "randomPermutation",
+        JSON.stringify(randomPermutation)
+      );
+    </script>
+    <script>
+      var imageUFO = document.getElementById("shipImage");
+      var imgUFO = document.getElementById("imgUFO");
+      var selectedImage = localStorage.getItem("ImgSelect");
+      console.log(selectedImage);
+      if (selectedImage === null) {
+        DefImg = "./assets/img/space.png";
+        imageUFO.src = DefImg;
+        imgUFO.src = DefImg;
+      } else {
+        imageUFO.src = selectedImage;
+        imgUFO.src = selectedImage;
+      }
+      currentImg = imageUFO.src;
+
+      // if (selectedImage !== currentImg) {
+      // }
+      // for (let index = 0; index <= 1; index++) {
+      //   location.reload();
+      //   const element = array[index];
+      //   console.log(index);
+      // }
+    </script>
+    <script>
+      //       window.onload = function() {
+      //     location.reload();
+      // };
+    </script>
+    <script>
+      function playSound() {
+        let touch = document.getElementById("brickBreakSound");
+        touch.play();
+      }
+      function stopSound() {
+        let touch = document.getElementById("brickBreakSound");
+        touch.mute();
+      }
+    </script>
+    <script src="assets/js/select.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
