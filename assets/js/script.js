@@ -53,13 +53,15 @@ var initialNumberOfStars, initialNumberOfSprites, initialSpeed;
 
 // Function to update values based on score
 function updateValues(score) {
-  var interval = Math.floor(score / 2500);
+  var interval = Math.floor(score / 1000);
   var increasePercentage = interval * 0.02;
 
   // Update initial values based on interval and increasePercentage
   numberOfStars = Math.floor(initialNumberOfStars * (1 + increasePercentage));
-  numberOfSprites = Math.floor(initialNumberOfSprites * (1 + increasePercentage));
-  speed = initialSpeed + (interval * 0.02 * initialSpeed);
+  numberOfSprites = Math.floor(
+    initialNumberOfSprites * (1 + increasePercentage)
+  );
+  speed = initialSpeed + interval * 0.02 * initialSpeed;
 }
 
 // Initial setup based on cnvsWidth
@@ -85,7 +87,6 @@ if (cnvsWidth < 360) {
 updateValues(0); // Assuming score starts from 0
 
 // Later, whenever the score changes, call updateValues(score)
-
 
 // -- Class Definitions --
 
@@ -459,7 +460,7 @@ function playerShip() {
   const shipX = -((x2 - x1) / 2) + x1;
   const shipY = -((y2 - y1) / 2) + y1;
 
-  ctx.drawImage(shipImage, shipX, shipY, (x2 - x1), (y2 - y1)+18);
+  ctx.drawImage(shipImage, shipX, shipY, x2 - x1, y2 - y1 + 18);
 
   // Shapes used to draw ship
   // Under Glow
@@ -675,28 +676,28 @@ function collisionDetection(x, y) {
 
 function drawScore() {
   // Convert score to string and pad with leading zeros
-  let scoreText = score.toString().padStart(6, '0');
-  
+  let scoreText = score.toString().padStart(6, "0");
+
   if (cnvsWidth <= 600) {
     ctx.font = "5vw Orbitron, sans-serif";
-    ctx.strokeText( scoreText, cnvsWidth - 108, 50);
+    ctx.strokeText(scoreText, cnvsWidth - 108, 50);
     ctx.strokeStyle = "rgba(255, 255, 255, 1)";
     ctx.fillStyle = "rgba(0, 0, 0, 0.25)"; // Black with opacity 0.25
     ctx.fillRect(cnvsWidth - 120, 22, 110, 40); // Adjust position and size as needed
     // ctx.strokeStyle = "rgba(255, 255, 255, 0.5)"; // Border color
-    ctx.lineJoin = 'round'
+    ctx.lineJoin = "round";
     // ctx.strokeRect(cnvsWidth - 315, 60, 300, 60); // Draw border
   } else {
     ctx.font = "2vw Orbitron, sans-serif";
-    ctx.strokeText( scoreText, cnvsWidth - 170, 50);
+    ctx.strokeText(scoreText, cnvsWidth - 170, 50);
     ctx.strokeStyle = "rgba(255, 255, 255, 1)";
     ctx.fillStyle = "rgba(0, 0, 0, 0.25)"; // Black with opacity 0.25
     ctx.fillRect(cnvsWidth - 185, 10, 180, 60); // Adjust position and size as needed
     // ctx.strokeStyle = "rgba(255, 255, 255, 0.5)"; // Border color
-    ctx.lineJoin = 'round'
+    ctx.lineJoin = "round";
     // ctx.strokeRect(cnvsWidth - 315, 60, 300, 60); // Draw border
   }
-  
+
   scoreText++; // Increment the score
 }
 
@@ -727,8 +728,8 @@ function speedIncrease() {
   //   speed += 0.001732;
   // }
 
-  if (score % 3000 === 0 && score !== 0) {
-    speed *= 1.5;
+  if (score % 1000 === 0 && score !== 0) {
+    speed *= 1.02;
   }
 }
 
