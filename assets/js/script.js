@@ -66,21 +66,21 @@ function updateValues(score) {
 
 // Initial setup based on cnvsWidth
 if (cnvsWidth < 360) {
-  initialNumberOfStars = 260;
-  initialNumberOfSprites = 24;
-  initialSpeed = 0.3;
+  initialNumberOfStars = 650 * 0.4; // 260
+  initialNumberOfSprites = 60 * 0.4; // 24
+  initialSpeed = 0.02;
 } else if (cnvsWidth < 768) {
-  initialNumberOfStars = 360;
-  initialNumberOfSprites = 32;
-  initialSpeed = 0.6;
+  initialNumberOfStars = 900 * 0.4; // 360
+  initialNumberOfSprites = 80 * 0.4; // 32
+  initialSpeed = 0.04;
 } else if (cnvsWidth < 1200) {
-  initialNumberOfStars = 480;
-  initialNumberOfSprites = 36;
-  initialSpeed = 0.9;
+  initialNumberOfStars = 1200 * 0.4; // 480
+  initialNumberOfSprites = 90 * 0.4; // 36
+  initialSpeed = 0.06;
 } else {
-  initialNumberOfStars = 600;
-  initialNumberOfSprites = 40;
-  initialSpeed = 1.2;
+  initialNumberOfStars = 1500 * 0.4; // 600
+  initialNumberOfSprites = 100 * 0.4; // 40
+  initialSpeed = 0.1;
 }
 
 // Initial update of values
@@ -729,7 +729,26 @@ function speedIncrease() {
   // }
 
   if (score % 1000 === 0 && score !== 0) {
-    speed *= 1.02;
+    // speed *= 1.02;
+    // New stars & Sprites
+    for (let i = numberOfStars; i < Math.floor(numberOfStars * 1.01); i++) {
+      starsArray[i] = new Star(
+        Math.random() * cnvsWidth,
+        Math.random() * cnvsHeight,
+        Math.random() * cnvsWidth
+      );
+    }
+    numberOfStars = Math.floor(numberOfStars * 1.01);
+    console.log("Stars:", starsArray);
+
+    for (let i = numberOfSprites; i < Math.floor(numberOfSprites * 1.01); i++) {
+      spritesArray[i] = new Sprite(
+        centreOfX,
+        centreOfY,
+        Math.random() * cnvsWidth
+      );
+    }
+    numberOfSprites = Math.floor(numberOfSprites * 1.01);
   }
 }
 

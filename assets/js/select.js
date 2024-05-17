@@ -30,12 +30,14 @@ document.addEventListener("DOMContentLoaded", function () {
   // Set the src attribute of selectedImageElement to the value stored in localStorage
   var a = localStorage.getItem("ImgSelect");
   var selectedImageElement = document.getElementById("selectedImage");
-  if (a === null) {
-    // Set a default image if localStorage is empty
-    a = "./assets/img/space.png";
-    localStorage.setItem("ImgSelect", a);
+  if (selectedImageElement) {
+    if (a === null) {
+      // Set a default image if localStorage is empty
+      a = "./assets/img/space.png";
+      localStorage.setItem("ImgSelect", a);
+    }
+    selectedImageElement.src = a;
   }
-  selectedImageElement.src = a;
 
   // Function to get the score from localStorage
   function getScore() {
@@ -90,7 +92,7 @@ var scoreCard10 = document.getElementById("scs10");
 var scoreCard11 = document.getElementById("scs11");
 if (score > 2999) {
   scoreCard1.classList.add("locked");
-} 
+}
 if (score > 3999) {
   scoreCard2.classList.add("locked");
 }
