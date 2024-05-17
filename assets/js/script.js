@@ -729,7 +729,7 @@ function speedIncrease() {
   // }
 
   if (score % 1000 === 0 && score !== 0) {
-    // speed *= 1.02;
+    speed *= 1.02;
     // New stars & Sprites
     for (let i = numberOfStars; i < Math.floor(numberOfStars * 1.01); i++) {
       starsArray[i] = new Star(
