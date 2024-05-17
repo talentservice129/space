@@ -68,19 +68,19 @@ function updateValues(score) {
 if (cnvsWidth < 360) {
   initialNumberOfStars = 650 * 0.4; // 260
   initialNumberOfSprites = 60 * 0.4; // 24
-  initialSpeed = 0.02;
+  initialSpeed = 0.3;
 } else if (cnvsWidth < 768) {
   initialNumberOfStars = 900 * 0.4; // 360
   initialNumberOfSprites = 80 * 0.4; // 32
-  initialSpeed = 0.04;
+  initialSpeed = 0.6;
 } else if (cnvsWidth < 1200) {
   initialNumberOfStars = 1200 * 0.4; // 480
   initialNumberOfSprites = 90 * 0.4; // 36
-  initialSpeed = 0.06;
+  initialSpeed = 0.9;
 } else {
   initialNumberOfStars = 1500 * 0.4; // 600
   initialNumberOfSprites = 100 * 0.4; // 40
-  initialSpeed = 0.1;
+  initialSpeed = 1.2;
 }
 
 // Initial update of values
