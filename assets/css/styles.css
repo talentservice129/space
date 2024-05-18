@@ -14,6 +14,19 @@ body {
     color: #fff;
     /* White text for visibility in space */
 }
+  
+@media screen and (orientation:portrait) {
+  body {
+    transform: rotate(90deg);
+    transform-origin: left top;
+    width: 100vh;
+    height: 100vw;
+    overflow-x: hidden;
+    position: absolute;
+    top: 0;
+    left: 100%;
+  }
+}
 
 #container {
     position: relative;

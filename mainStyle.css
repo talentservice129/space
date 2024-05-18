@@ -1,9 +1,23 @@
 body {
+  background-color: #000 !important;
     /* background-image: url('Untitled-1-09.png'); */
-    background-color: #020516 !important;
+    /* background-color: #020516 !important; */
     /* background-size: cover; 
     background-repeat: no-repeat; 
     background-attachment: fixed; */
+  }
+  
+  @media screen and (orientation:portrait) {
+    body {
+      transform: rotate(90deg);
+      transform-origin: left top;
+      width: 100vh;
+      height: 100vw;
+      overflow-x: hidden;
+      position: absolute;
+      top: 0;
+      left: 100%;
+    }
   }
   
   .button-30{
