@@ -91,7 +91,7 @@ body {
     /*Removes the default margin preset by the browser*/
     margin: 0;
   
-    min-height: 100vh;
+    /* min-height: 100vh; */
   
     /* Used to vertically center <main> when <main>'s margin is set to auto */
     display: flex; 
@@ -244,4 +244,32 @@ body {
     flex-direction: column;
     margin-top: -18.5rem;
     /* position: absolute; */
+}
+
+.splash-bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background-color: #000;
+  background-image: url('Final.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 300px;
+}
+
+.play-btn {
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 30px;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
 }
