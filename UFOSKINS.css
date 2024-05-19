@@ -7,6 +7,19 @@ body {
     box-sizing: border-box;
     overflow-x: hidden;
 }
+  
+@media screen and (orientation: landscape) {
+    body {
+        transform: rotate(-90deg);
+        transform-origin: top left;
+        width: 100vh;
+        height: 100vw;
+        overflow-x: hidden;
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+}
 
 .button-30 {
     margin-top: 25px;
@@ -61,13 +74,13 @@ body {
 
 .dropdown {
     margin-top: 15vh;
-    width: 100vw;
-    height: 70vh;
+    /* width: 100vw;
+    height: 70vh; */
 }
 
 .img {
     height: 15vh;
-    width: 100vw;
+    /* width: 100vw; */
     display: flex;
     justify-content: center;
     align-items: center;

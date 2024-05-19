@@ -30,7 +30,7 @@ body {
 
 #container {
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 #canvas {
@@ -425,7 +425,8 @@ p#credit {
     /* margin-left: 2.5vw; */
     /* border-radius: 20px; */
     /* top: 160px; */
-    width: 100vw;
+    left: 0;
+    right: 0;
     background-image: url('/WhatsApp\ Image\ 2024-02-05\ at\ 23.32.24_6a2c6b86.jpg');
     background-repeat: no-repeat;
     background-size: 100vw;
@@ -487,8 +488,8 @@ p#credit {
 }
 
 .mn-gm {
-    height: 100vh;
-    width: 100vw;
+    /* height: 100vh;
+    width: 100vw; */
 }
 
 #start-btn img {
@@ -613,8 +614,8 @@ select {
 @media (min-width: 1400px) {}
 
 .secth{
-    height: 100vh;
-    width: 100vw;
+    /* height: 100vh;
+    width: 100vw; */
 }
 
 /* CSS */
@@ -664,7 +665,7 @@ select {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    /* width: 100vw; */
 }
 
 .playBtn button{
