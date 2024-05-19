@@ -7,16 +7,16 @@ body {
     background-attachment: fixed; */
   }
   
-  @media screen and (orientation:portrait) {
+  @media screen and (orientation: landscape) {
     body {
-      transform: rotate(90deg);
-      transform-origin: left top;
+      transform: rotate(-90deg);
+      transform-origin: top left;
       width: 100vh;
       height: 100vw;
       overflow-x: hidden;
       position: absolute;
-      top: 0;
-      left: 100%;
+      top: 100%;
+      left: 0;
     }
   }
   
