@@ -302,7 +302,7 @@ class Sprite {
       ctx.drawImage(this.image, xPos - s, yPos - s, s * 2, s * 2);
 
       function getAsteroid(score) {
-        const interval = 450;
+        const interval = 750;
         const storedPermutation = localStorage.getItem("randomPermutation");
         let retrievedPermutation = [];
 
