@@ -330,8 +330,8 @@ class Sprite {
       // Draw the asteroid image instead of a geometric shape
       ctx.drawImage(this.image, xPos - s, yPos - s, s * 2, s * 2);
 
-      // const ast = getAsteroid(score);
-      // this.image.src = ast;
+      const ast = getAsteroid(score);
+      this.image.src = ast;
 
       // if( score < 500 ){
       //   this.image.src = 'assets/img/1_500.png';
