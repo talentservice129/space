@@ -711,6 +711,7 @@ select {
   
   /* Apply the animation to the element you want to blink */
   .blink {
+    opacity: 0;
     animation-name: blink;          /* Reference the name of the keyframes */
     animation-duration: 1s;        /* One cycle of the animation will last 1 second */
     animation-iteration-count: 3;  /* Animation will run 3 times */
