@@ -146,7 +146,7 @@ class Star {
     // }
 
     function getColor(score) {
-      const interval = 450;
+      const interval = 750;
       const storedPermutation = localStorage.getItem("randomPermutation");
       let retrievedPermutation = [];
 
