@@ -702,3 +702,17 @@ select {
     margin-left: 25px;
     transform: rotate(180deg);
 }
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  /* Apply the animation to the element you want to blink */
+  .blink {
+    animation-name: blink;          /* Reference the name of the keyframes */
+    animation-duration: 1s;        /* One cycle of the animation will last 1 second */
+    animation-iteration-count: 3;  /* Animation will run 3 times */
+    animation-timing-function: linear; /* Keeps the animation pace even throughout */
+  }

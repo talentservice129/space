@@ -259,6 +259,35 @@ const Red = [
   "assets/img/red/r5.png",
   "assets/img/red/r6.png",
 ];
+
+function getAsteroid(score) {
+  const interval = 750;
+  const storedPermutation = localStorage.getItem("randomPermutation");
+  let retrievedPermutation = [];
+
+  // Check if the stored permutation exists in localStorage
+  if (storedPermutation) {
+    retrievedPermutation = JSON.parse(storedPermutation);
+  } else {
+    // If not, initialize with default permutation
+    retrievedPermutation = [0, 1, 2, 3, 4];
+  }
+
+  // console.log(storedPermutation)
+  const colors = [
+    purple[retrievedPermutation[0]],
+    blue[retrievedPermutation[1]],
+    imagePaths[retrievedPermutation[2]],
+    green[retrievedPermutation[3]],
+    Red[retrievedPermutation[4]],
+  ];
+  const colorIndex = Math.floor(
+    (score / interval) % retrievedPermutation.length
+  );
+  const permutationIndex = retrievedPermutation[colorIndex];
+
+  return colors[permutationIndex];
+}
 class Sprite {
   constructor(x, y, z) {
     this.x = x;
@@ -266,7 +295,7 @@ class Sprite {
     this.z = z;
     this.image = new Image();
 
-    this.image.src = "assets/img/1_500.png";
+    this.image.src = getAsteroid(score);
     this.randomX = notZeroRange(-10, 10);
     this.randomY = notZeroRange(-10, 10);
   }
@@ -301,36 +330,8 @@ class Sprite {
       // Draw the asteroid image instead of a geometric shape
       ctx.drawImage(this.image, xPos - s, yPos - s, s * 2, s * 2);
 
-      function getAsteroid(score) {
-        const interval = 750;
-        const storedPermutation = localStorage.getItem("randomPermutation");
-        let retrievedPermutation = [];
-
-        // Check if the stored permutation exists in localStorage
-        if (storedPermutation) {
-          retrievedPermutation = JSON.parse(storedPermutation);
-        } else {
-          // If not, initialize with default permutation
-          retrievedPermutation = [0, 1, 2, 3, 4];
-        }
-
-        // console.log(storedPermutation)
-        const colors = [
-          purple[retrievedPermutation[0]],
-          blue[retrievedPermutation[1]],
-          imagePaths[retrievedPermutation[2]],
-          green[retrievedPermutation[3]],
-          Red[retrievedPermutation[4]],
-        ];
-        const colorIndex =
-          Math.floor(score / interval) % retrievedPermutation.length;
-        const permutationIndex = retrievedPermutation[colorIndex];
-
-        return colors[permutationIndex];
-      }
-
-      const ast = getAsteroid(score);
-      this.image.src = ast;
+      // const ast = getAsteroid(score);
+      // this.image.src = ast;
 
       // if( score < 500 ){
       //   this.image.src = 'assets/img/1_500.png';
