@@ -656,7 +656,7 @@ function collisionDetection(x, y) {
     if (!endGame) {
       const prevHighScore = localStorage.getItem("highScore");
       if (!prevHighScore || prevHighScore < score) {
-        recordScreen();
+    recordScreen();
       } else {
         crashScreen();
       }
@@ -768,7 +768,7 @@ function crashScreen() {
   document.getElementById("crash-panel").classList.toggle("hidden");
   document.getElementById("github").classList.toggle("hidden");
   document.getElementById("restart-btn").addEventListener("click", reload);
-  document.getElementById("explosion").play();
+  // document.getElementById("explosion").play();
   endGame = true;
   saveHighScore();
 }
@@ -780,8 +780,8 @@ function recordScreen() {
   document.getElementById("high-score-output1").innerHTML = score;
   document.getElementById("github").classList.toggle("hidden");
   document.getElementById("restart-btn2").addEventListener("click", reload);
-  document.getElementById("explosion").play();
   document.getElementById("completed").play();
+  // document.getElementById("explosion").play();
   endGame = true;
   saveHighScore();
 }
@@ -863,7 +863,7 @@ function initialiseGame() {
   document.getElementById("start-panel").classList.toggle("hidden");
   document.getElementById("bottom-banner").classList.toggle("hidden");
   document.getElementById("github").classList.toggle("hidden");
-  document.getElementById("start").play();
+  // document.getElementById("start").play();
   var audioDropdown = document.getElementById("audioDropdown");
   var selectedOption = audioDropdown.value;
 
