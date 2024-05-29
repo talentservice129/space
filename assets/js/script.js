@@ -1,5 +1,7 @@
 // Hides the crash screen so it can be unhidden later
 document.getElementById("crash-panel").classList.toggle("hidden");
+// Hides the new record screen so it can be unhidden later
+document.getElementById("record-panel").classList.toggle("hidden");
 // Hides the completed screen so it can be unhidden later
 document.getElementById("completed-panel").classList.toggle("hidden");
 // Hides bottom banner containing direction buttons
@@ -651,7 +653,14 @@ function collisionDetection(x, y) {
     y - getShipLocation(angle)[1] >= -35
   ) {
     // Calls crash screen when a collision is detected
-    crashScreen();
+    if (!endGame) {
+      const prevHighScore = localStorage.getItem("highScore");
+      if (!prevHighScore || prevHighScore < score) {
+        recordScreen();
+      } else {
+        crashScreen();
+      }
+    }
   }
 }
 
@@ -759,6 +768,18 @@ function crashScreen() {
   document.getElementById("crash-panel").classList.toggle("hidden");
   document.getElementById("github").classList.toggle("hidden");
   document.getElementById("restart-btn").addEventListener("click", reload);
+  document.getElementById("explosion").play();
+  endGame = true;
+  saveHighScore();
+}
+
+// Crash screen functionality
+function recordScreen() {
+  document.getElementById("bottom-banner").classList.toggle("hidden");
+  document.getElementById("record-panel").classList.toggle("hidden");
+  document.getElementById("high-score-output1").innerHTML = score;
+  document.getElementById("github").classList.toggle("hidden");
+  document.getElementById("restart-btn2").addEventListener("click", reload);
   document.getElementById("explosion").play();
   endGame = true;
   saveHighScore();

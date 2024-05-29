@@ -154,6 +154,29 @@
         <button id="restart-btn">Restart Game</button>
       </section>
 
+      <!-- Crash Panel -->
+      <section id="record-panel">
+        <!-- Display Message -->
+        <p>New High Score!<br /></p>
+        <!-- Score Output Display -->
+        <div class="scr">
+          <!-- <p>HIGH SCORE:</p> -->
+          <img
+            src="./image-removebg-preview (1).png"
+            alt="world"
+            height="30px"
+          />
+          <div class="score">
+            <p class="high-sc" id="high-score-output1">0</p>
+          </div>
+        </div>
+        <div class="ufoImage">
+          <img id="imgUFO1" src="./assets/img/space.png" alt="Image" data-xblocker="passed" style="visibility: visible;">
+        </div>
+        <!-- Restart Button -->
+        <button id="restart-btn2">Tap to continue</button>
+      </section>
+
       <!-- Completed Panel -->
       <section id="completed-panel">
         <p>
@@ -263,15 +286,18 @@
     <script>
       var imageUFO = document.getElementById("shipImage");
       var imgUFO = document.getElementById("imgUFO");
+      var imgUFO1 = document.getElementById("imgUFO1");
       var selectedImage = localStorage.getItem("ImgSelect");
       console.log(selectedImage);
       if (selectedImage === null) {
         DefImg = "./assets/img/space.png";
         imageUFO.src = DefImg;
         imgUFO.src = DefImg;
+        imgUFO1.src = DefImg;
       } else {
         imageUFO.src = selectedImage;
         imgUFO.src = selectedImage;
+        imgUFO1.src = selectedImage;
       }
       currentImg = imageUFO.src;
 
