@@ -781,6 +781,7 @@ function recordScreen() {
   document.getElementById("github").classList.toggle("hidden");
   document.getElementById("restart-btn2").addEventListener("click", reload);
   document.getElementById("explosion").play();
+  document.getElementById("completed").play();
   endGame = true;
   saveHighScore();
 }
