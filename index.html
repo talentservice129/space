@@ -1,63 +1,239 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, user-scalable=no" />
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
-    <title>Stellar Drift</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="description" content="Stellar Drift - Mini space game" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="assets/css/styles.css" type="text/css" />
     <link rel="stylesheet" href="mainStyle.css" />
-    <!-- <link rel="stylesheet" href="button.css" /> -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap"
-      rel="stylesheet"
-    />
-    <script src="Mute.js"></script>
+    <title>Stellar Drift</title>
     <style>
-      body {
-        overflow-y: hidden;
-      }
+
+          body {
+            margin: 0;
+            overflow-y: hidden;
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+          }
+          .logo {
+            margin-top: 20px;
+          }
+          .splash-bg {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+          }
+          .play-btn {
+            background: #000;
+            padding: 20px;
+            font-size: 24px;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: #fff;
+          }
     </style>
   </head>
   <body>
-    <audio id="brickBreakSound" autoplay loop="loop" style="margin-top: 2rem">
-      <source src="SPACE.mp3" type="audio/mpeg" />
-      Your browser does not support the audio element.
-    </audio>
-
-    <video
-      src="smash_bg.mp4"
-      autoplay
-      loop
-      controls
-      style="display: none"
-    ></video>
-    <div class="splash-bg">
-      <a
-          href="game.html"
-          class="play-btn"
-      >
-          Press here to continue
-      </button>
+    <div class="splash-bg" id="splash-screen">
+      <button class="play-btn" onclick="startGame()">Press here to continue</button>
     </div>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
+
+    <article id="container" style="display: none;">
+      <!-- Floating Banners Above Canvas -->
+      <section class="top-banner" style="display: none">
+        <!-- Name Title Above Game -->
+        <div class="name-title">
+          <div id="countdown">
+            <p id="countdowntimer"></p>
+          </div>
+          <div id="milkyway-container"></div>
+        </div>
+        <!-- Audio -->
+        <audio id="music" src="assets/audio/SPACE.mp3" loop autoplay></audio>
+        <audio id="start" src="assets/audio/Start game.mp3"></audio>
+        <audio id="explosion" src="assets/audio/Explosion.mp3"></audio>
+        <audio id="completed" src="assets/audio/Game complete.mp3"></audio>
+        <!-- Mute Button -->
+        <ul class="mute-btn">
+          <li>
+            <button style="display: none" id="mute" aria-label="Mute Audio">
+              <i id="i-muted" class="hidden fa fa-volume-off"></i>
+              <i id="i-not-muted" class="fa fa-volume-up"></i>
+            </button>
+          </li>
+        </ul>
+        <!-- Reset Button -->
+        <ul class="reset-btn">
+          <li>
+            <button id="reset" style="display: none">Reset</button>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Start Game Panel -->
+      <section class="mn-gm" id="start-panel">
+        <audio id="brickBreakSound" autoplay loop="loop" style="margin-top: 2rem">
+          <source src="SPACE.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+        <div class="secth">
+          <p>
+            <img class="imglogo" src="./image-removebg-preview.png" alt="Game Image" width="300" />
+          </p>
+          <div class="mainsection">
+            <div class="ufoImage">
+              <img id="imgUFO" src="./assets/img/space.png" alt="Image" />
+            </div>
+            <div class="set-section">
+              <div class="dropdown">
+                <label class="audiosymbol" for="audioDropdown">
+                  <img src="./image-removebg-preview2.png" alt="Music" />
+                </label>
+                <select class="drpdwn" id="audioDropdown">
+                  <option value="asset/">Mute</option>
+                  <option value="assets/audio/1.mp3" selected>Lunar Lullaby</option>
+                  <option value="assets/audio/2.mp3">Gravity Groove</option>
+                  <option value="assets/audio/5.mp3">Beyond Horizon</option>
+                  <option value="assets/audio/6.mp3">Lunar Melody</option>
+                </select>
+              </div>
+              <div class="scr">
+                <img src="./image-removebg-preview (1).png" alt="world" height="30px" />
+                <div class="score">
+                  <p class="high-sc" id="high-score-output">0</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="playBtn">
+            <button id="start-btn1" type="button" role="button">Tap to Play</button>
+          </div>
+          <div class="selimage">
+            <a href="Ufo_Skin.html">
+              <div>
+                <img src="./assets/img/image-removebg-preview.png" alt="UFO Skins" class="ufoimage" />
+              </div>
+            </a>
+            <button id="start-btn" onclick="stopSound()">
+              <img src="./play.png" alt="Start" />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Crash Panel -->
+      <section id="crash-panel">
+        <p>CRASHED<br /></p>
+        <p>YOUR SCORE:</p>
+        <p id="score-output">0</p>
+        <button id="restart-btn">Restart Game</button>
+      </section>
+
+      <!-- Record Panel -->
+      <section id="record-panel">
+        <p>New High Score!<br /></p>
+        <div class="scr">
+          <img src="./image-removebg-preview (1).png" alt="world" height="30px" />
+          <div class="score">
+            <p class="high-sc" id="high-score-output1">0</p>
+          </div>
+        </div>
+        <div class="ufoImage">
+          <img id="imgUFO1" src="./assets/img/space.png" alt="Image" />
+        </div>
+        <button id="restart-btn2">Tap to continue</button>
+      </section>
+
+      <!-- Completed Panel -->
+      <section id="completed-panel">
+        <p></p>
+        <button id="restart-btn">Restart Game</button>
+      </section>
+
+      <!-- Countdown Timer Overlay -->
+      <div id="countdown">
+        <p id="countdowntimer"></p>
+      </div>
+
+      <!-- Github Button Icon -->
+      <div id="github">
+        <ul class="github-button"></ul>
+      </div>
+
+      <!-- Direction Buttons -->
+      <section id="bottom-banner">
+        <ul class="dir-btn-container">
+          <li class="dir-btns-sides">
+            <img id="shipImage" src="./assets/img/space.png" hidden />
+            <button class="side-screen-btn" id="left-direction-btn" aria-label="Left Direction"></button>
+            <div class="leftImgBtn blink">
+              <img src="./arrow-right.png" alt="Left Arrow">
+            </div>
+          </li>
+          <li class="dir-btns-sides">
+            <button class="side-screen-btn" id="right-direction-btn" aria-label="Right Direction"></button>
+            <div class="rightImgBtn blink">
+              <img src="./arrow-right.png" alt="Right Arrow">
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <div id="milkyway-container-bottom" style="position: absolute; height: 17vh; width: 100vw; bottom: 0" class="hidden"></div>
+
+      <!-- Canvas -->
+      <canvas id="canvas"> Error </canvas>
+    </article>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script>
+      function startGame() {
+        document.getElementById('splash-screen').style.display = 'none';
+        document.getElementById('container').style.display = 'block';
+        playSound();
+      }
+
       function playSound() {
         let touch = document.getElementById("brickBreakSound");
         touch.play();
       }
+
+      function stopSound() {
+        let touch = document.getElementById("brickBreakSound");
+        touch.pause();
+      }
+
+
+      var imageUFO = document.getElementById("shipImage");
+      var imgUFO = document.getElementById("imgUFO");
+      var imgUFO1 = document.getElementById("imgUFO1");
+      var selectedImage = localStorage.getItem("ImgSelect");
+      console.log(selectedImage);
+      if (selectedImage === null) {
+        DefImg = "./assets/img/space.png";
+        imageUFO.src = DefImg;
+        imgUFO.src = DefImg;
+        imgUFO1.src = DefImg;
+      } else {
+        imageUFO.src = selectedImage;
+        imgUFO.src = selectedImage;
+        imgUFO1.src = selectedImage;
+      }
+      currentImg = imageUFO.src;
     </script>
+    <script src="assets/js/select.js"></script>
+    <script src="assets/js/script.js"></script>
   </body>
 </html>
+
